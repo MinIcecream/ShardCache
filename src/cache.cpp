@@ -2,7 +2,7 @@
 
 Cache::~Cache() {
     Node* curr = head;
-    while (curr) {
+    while (curr != nullptr) {
         Node* next = curr -> next;
         delete curr;
         curr = next;

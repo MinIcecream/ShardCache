@@ -1,8 +1,10 @@
 #include <iostream>
-#include "cache.h"
+#include "include/cache.h"
+#include "include/benchmark.h"
+
 int main() {
-    Cache cache(5);
-    cache.put(5, 5);
-    return 0;
+    Cache* cache = new Cache(10000);
+    Benchmark benchmark(cache);
+    benchmark.run();
 }
 
