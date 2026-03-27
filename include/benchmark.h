@@ -1,6 +1,7 @@
 #include "cache.h"
 #include <thread>
 #include <iostream>
+#include <random>
 #include <vector>
 
 class Benchmark {
@@ -10,7 +11,7 @@ public:
     const int KEY_RANGE = 100000;
     const int NUM_THREADS = 1;
     const int NUM_RUNS = 5;
-    const int READ_RATIO = 80;
+    const float READ_RATIO = 0.8;
     Cache* cache;
     std::vector<std::thread> threads;
 
