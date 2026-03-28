@@ -1,9 +1,9 @@
 #include <iostream>
-#include "include/cache.h"
+#include "include/single_threaded_cache.h"
 #include "include/benchmark.h"
 
 int main() {
-    Cache* cache = new Cache(10000);
+    Cache* cache = new SingleThreadedCache(10000);
     Benchmark benchmark(cache);
     benchmark.run();
 }

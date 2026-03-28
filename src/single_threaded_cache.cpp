@@ -1,6 +1,6 @@
-#include "../include/cache.h"
+#include "../include/single_threaded_cache.h"
 
-Cache::~Cache() {
+SingleThreadedCache::~SingleThreadedCache() {
     Node* curr = head;
     while (curr != nullptr) {
         Node* next = curr -> next;
@@ -8,7 +8,7 @@ Cache::~Cache() {
         curr = next;
     }
 }
-std::optional<int> Cache::get(int key) {
+std::optional<int> SingleThreadedCache::get(int key) {
     if (!map.count(key)) {
         return {};
     }
@@ -19,7 +19,7 @@ std::optional<int> Cache::get(int key) {
     return node -> val;
 }
 
-void Cache::put(int key, int value) {
+void SingleThreadedCache::put(int key, int value) {
     if (map.count(key)) {
         Node* node = map[key];
         node -> val = value;
@@ -39,12 +39,12 @@ void Cache::put(int key, int value) {
     }
 }
 
-void Cache::removeFromLinkedList(Node* node) {
+void SingleThreadedCache::removeFromLinkedList(Node* node) {
     node -> prev -> next = node -> next;
     node -> next -> prev = node -> prev;
 }
 
-void Cache::addToLinkedList(Node* node) {
+void SingleThreadedCache::addToLinkedList(Node* node) {
     Node* temp = head -> next;
     head -> next = node;
     node -> prev = head;
