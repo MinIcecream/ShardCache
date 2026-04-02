@@ -9,12 +9,12 @@ public:
     const int NUM_OPS = 1000000;
     const int CACHE_CAPACITY = 10000;
     const int KEY_RANGE = 100000;
-    const int NUM_THREADS = 2;
+    const int NUM_THREADS = 1;
     const float READ_RATIO = 0.8;
     Cache* cache;
     std::vector<std::thread> threads;
 
-    Benchmark(Cache* cache) : cache{cache} {}
+    Benchmark(Cache* cache, int threads) : cache{cache}, NUM_THREADS{threads} {}
 
     void threadRun(int num_ops);
 

@@ -1,4 +1,3 @@
-
 #pragma once
 #include <optional>
 #include "simple_mutex_cache.h"

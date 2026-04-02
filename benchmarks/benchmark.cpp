@@ -22,7 +22,6 @@ void Benchmark::threadRun(int thread_ops) {
             cache->get(key);
         }
     }
-    std::cout<<"gets: "<<gets<<" Puts: "<<puts<<std::endl;
 }
 
 void Benchmark::run() {
